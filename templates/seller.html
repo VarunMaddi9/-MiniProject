@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Seller</title>
+        <style>
+            body {
+                background-color: #FFBF86;
+            }
+
+            .form {
+                background-color: #FFF;
+                width: 50%;
+                margin: auto;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0px 0px 10px #000;
+            }
+
+            input {
+                margin: 10px;
+                padding: 10px;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+            }
+
+            input[type="submit"] {
+                background-color: #0c0c0c;
+                color: white;
+                border: none;
+                padding: 10px;
+                cursor: pointer;
+            }
+
+        </style>
+    </head>
+
+    <body>
+
+
+
+        <div class="form">
+            <!--! ikkada seller bidder page ki redirect ayye code ray -->
+            <form action="{% url 'seller' %}" method="POST">
+                <h3>Product form</h3>
+                {% csrf_token %}
+                <label for="">Product Name: </label>
+                <input type="text" name="productname" id="" placeholder="Enter your product name" required>
+                <br><br>
+                <label for="">Minimum Bid: </label>
+                <input type="number" name="productprice" id="" placeholder="Enter your Product price" required>
+                <br><br>
+                <!--! Newly added -->
+                <label for="">Seller Name: </label>
+                <input type="text" name="sellername" id="" placeholder="Enter seller name" required>
+                <br><br>
+                <label for="">Bid End Date: </label>
+                <input type="datetime-local" name="deadline" placeholder="Enter your last date" required>
+                <br><br>
+                <label for="">Upload your product image: </label>
+                <input type="file" name="productimage" accept="image/*" id="id_productimage">
+                <br><br>
+                <input type="submit" value="submit">
+            </form>
+        </div>
+    </body>
+
+</html>

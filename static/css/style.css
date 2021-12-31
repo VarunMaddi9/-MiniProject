@@ -1,0 +1,31 @@
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.carousel-item {
+    max-width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+}
+#navbarToggler {
+    justify-content: space-between;
+}
+#Login,
+#Signup {
+    float: right;
+}
+
+#hoverEffect {
+    font-size: large;
+}
+
+#hoverEffect:hover {
+    color: blue;
+}

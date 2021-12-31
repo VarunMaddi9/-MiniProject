@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>SignUp</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- LINEARICONS -->
+		<link rel="stylesheet" href="{% static 'fonts/linearicons/style.css' %}">
+
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="{% static 'signupcss/style.css' %}">
+	</head>
+
+	<body>
+		<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="container-fluid">
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+					data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<a class="navbar-brand" href="/index.html">BEST BID</a>
+				<div class="collapse navbar-collapse" id="navbarToggler">
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page" href="/index.html">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page" href="#">About</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page" href="#">Contact Us</a>
+						</li>
+					</ul>
+				</div>
+				<a class="nav-link active" aria-current="page" href="/login/login.html" id="Login">Login</a>
+				<a class="nav-link active" aria-current="page" href="/signup/signup.html" id="Signup">SignUp</a>
+			</div>
+		</nav> -->
+
+		<div class="wrapper">
+
+			<div class="inner">
+				<div class="varun" style="text-align: center; font-size: 25px;">
+					{{register}}
+				</div>
+				
+				<img src="{% static 'images/image-1.png' %}" alt="" class="image-1">
+				<form action="{% url 'signup' %}" method="POST">
+					{% csrf_token %}
+					<h3>New Account?</h3>
+					<div class="form-holder">
+						<span class="lnr lnr-user"></span>
+						<input type="text" class="form-control" placeholder="Username" name="uname">
+					</div>
+					<!-- <div class="form-holder">
+						<span class="lnr lnr-phone-handset"></span>
+						<input type="text" class="form-control" placeholder="Phone Number">
+					</div> -->
+					<div class="form-holder">
+						<span class="lnr lnr-envelope"></span>
+						<input type="text" class="form-control" placeholder="Mail" name="uemail">
+					</div>
+					<div class="form-holder">
+						<span class="lnr lnr-lock"></span>
+						<input type="password" class="form-control" placeholder="Password" name="upass">
+					</div>
+					<div class="form-holder">
+						<span class="lnr lnr-lock"></span>
+						<input type="password" class="form-control" placeholder="Confirm Password" name="ucpass">
+					</div>
+					<button type="submit">
+						<span>Register</span>
+					</button><br>
+
+					<p>Already have an account? <a class="login" href="{%  url 'login' %}">Login</a></p>
+					<br><br>
+					<a id="home" href="{% url 'home' %}"><img id="retuntohome" style="width:50px;height:50px;"
+							src="{% static 'images/download.png' %}" alt="Back to Home"></a>
+
+
+				</form>
+				<img src="{% static 'images/image-2.png' %}" alt="" class="image-2">
+			</div>
+
+		</div>
+
+		<script src="{% static 'signupjs/jquery-3.3.1.min.js' %}"></script>
+		<script src="{% static 'signupjs/main.js' %}"></script>
+	</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>

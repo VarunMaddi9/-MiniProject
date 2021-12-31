@@ -1,0 +1,47 @@
+
+
+{% extends 'select.html' %}
+
+{% block styleblock %}
+
+<style>
+    .objs {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #logout {
+        margin-left: 69rem;
+        color: black;
+        font-size: large;
+    }
+
+    #logout:hover {
+        color: red;
+    }
+
+</style>
+
+{% endblock styleblock %}
+
+{% block display %}
+
+<div class="objs bg-secondary">
+    {% for x in objects %}
+    <div class="myimg card mx-3 my-3 " style="width: 20rem;">
+        <!--! Image ravatle bros...-->
+        <img src= "{{ x.productimage.url }}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Product Name: <p style="font-weight:450;display:inline">{{ x.productname }}</p>
+            </h5>
+            <h5 class="card-title">Minimum Bid: <p style="font-weight:450;display:inline">{{ x.productprice }}</p>
+            </h5>
+            <h5 class="card-title">Bid End Date: <p style="font-weight:450;display:inline">{{ x.deadline }}</p>
+            </h5>
+            <a href="{% url 'bidding' x.id %}" class="btn btn-primary">View More</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock display %}

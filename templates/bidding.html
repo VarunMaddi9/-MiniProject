@@ -1,0 +1,26 @@
+{% extends 'select.html' %}
+
+
+
+{% block display %}
+
+    <div class="myimg card mx-3 my-3" style="width: 18rem;">
+        <img src="{{ object1.productimage.url }}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Product Name: <p style="font-weight:450;display:inline">{{ object1.productname }}</p>
+            </h5>
+            <h5 class="card-title">Minimum Bid: <p value="{{object1.productprice}}" style="font-weight:450;display:inline">{{object1.productprice }}</p>
+            </h5>
+            <h5 class="card-title">Bid End Date: <p style="font-weight:450;display:inline">{{ object1.deadline }}</p>
+            </h5>
+            <form action="{% url 'bidding' object1.id %}" method="POST">
+                {% csrf_token %}
+                <h5>Enter your bid amount</h5>
+                <input type="number" name="amount" id="amount">
+                <br><br>
+                <input type="submit" value="Submit" onclick="v()">
+            </form>
+        </div>
+    </div>
+
+{% endblock display %}

@@ -1,0 +1,20 @@
+{% extends 'select.html' %}
+
+{% block display %}
+
+<div class="objs bg-secondary">
+    {% for x in objects %}
+    <div class="myimg card mx-3 my-3 " style="width: 20rem;">
+        <div class="card-body">
+            <h5 class="card-title">User Name: <p style="font-weight:450;display:inline">{{ x.userid }}</p>
+            </h5>
+            <h5 class="card-title">Product Name: <p style="font-weight:450;display:inline">{{ x.productid }}</p>
+            </h5>
+            <h5 class="card-title">Bid Amount: <p style="font-weight:450;display:inline">{{ x.bidamount }}</p>
+            </h5>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock display %}
